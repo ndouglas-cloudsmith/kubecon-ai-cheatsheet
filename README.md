@@ -54,42 +54,53 @@ ollama show --modelfile llama3.2
 The best way to get familiar with the Hugging Face CLI to check the official docs: <br/>
 https://huggingface.co/docs/huggingface_hub/guides/search#using-the-cli
 <br/><br/>
+
 List ```models```:
 ```
 hf models ls --author=HuggingFaceTB --limit=10
 ```
+
 Get info about a ```specific model``` on the hub:
 ```
 hf models info Qwen/Qwen-Image-2512
 ```
+
 List ```datasets```:
 ```
 hf datasets ls --filter "format:parquet" --sort=downloads
 ```
+
 Get info about a ```specific dataset``` on the hub:
 ```
 hf datasets info HuggingFaceFW/fineweb
 ```
+
 List ```Spaces```:
+
 ```
 hf spaces ls --search "3d"
 ```
+
 Get info about a specific ```Space``` on the hub:
+
 ```
 hf spaces info enzostvs/deepsite
 ```
 We'll come to this later, but [Skills](https://github.com/huggingface/skills) are quickly becoming the biggest attack surface when we start talking about AI agents.
+
 ```
 hf skills
 ```
 
 To download a **single file** from a repo, simply provide the ```repo_id``` and ```filename``` as follows:
+
 ```
 hf download gpt2 config.json
 ```
 
 The command will always print on the last line **the path to the file** on your local machine. <br/>
 You can read the entire contents of the local cache with the below command:
+
 ```
 ls -R /root/.cache/huggingface/hub/
 ```
@@ -101,6 +112,7 @@ hf download HiDream-ai/HiDream-I1-Full text_encoder/model.safetensors
 
 You can check this using the ```--dry-run``` parameter. It lists all files to download on the repo and checks whether they are already downloaded or not. <br/>
 This gives an idea of how many files have to be downloaded and their sizes.
+
 ```
 hf download openai-community/gpt2 --dry-run
 ```
@@ -114,10 +126,12 @@ Scan a Hugging Face Model
 ```
 trufflehog huggingface --model <model_id>
 ```
+
 Scan a Hugging Face Dataset
 ```
 trufflehog huggingface --dataset <dataset_id>
 ```
+
 Scan a Hugging Face Space
 ```
 trufflehog huggingface --space <space_id>
