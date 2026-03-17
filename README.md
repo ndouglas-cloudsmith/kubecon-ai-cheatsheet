@@ -17,7 +17,7 @@ source ~/.bashrc
 hf --help
 ```
 
-Install [Trufflehog](https://github.com/trufflesecurity/trufflehog) to find sensitive credentials exposed in Hugging Face Hub.
+Install **[Trufflehog](https://github.com/trufflesecurity/trufflehog)** to find sensitive credentials exposed in Hugging Face Hub.
 ```
 curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | sh -s -- -b /usr/local/bin
 ```
@@ -53,7 +53,6 @@ We'll come to this later, but [Skills](https://github.com/huggingface/skills) ar
 hf skills
 ```
 
-
 To download a **single file** from a repo, simply provide the ```repo_id``` and ```filename``` as follows:
 ```
 hf download gpt2 config.json
@@ -74,4 +73,10 @@ You can check this using the ```--dry-run``` parameter. It lists all files to do
 This gives an idea of how many files have to be downloaded and their sizes.
 ```
 hf download openai-community/gpt2 --dry-run
+```
+
+
+## Sensitive credential exposure with Trufflehog
+```
+trufflehog huggingface --model <user>/<model>
 ```
