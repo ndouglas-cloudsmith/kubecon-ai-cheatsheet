@@ -2,9 +2,29 @@
 This is a cheatsheet for the AI CTF event at Kubecon EU in 2026
 
 ## Interacting with Ollama as a Kubernetes workload
+Check status of running pod:
+```
+kubectl get pods -n llm
+```
+
 Terminal Shell into the container:
 ```
 kubectl exec -it -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- /bin/bash
+```
+
+Remotely running commands against the Ollama workload - such as ```ollama list```
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ollama list
+```
+
+Get the image for the Ollama pod:
+```
+kubectl get pods -n llm -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name,IMAGES:.spec.containers[*].image'
+```
+
+Port Forward the Ollama service to interact with it via CURL:
+```
+kubectl port-forward svc/llm-ollama-service -n llm 8080:8080
 ```
 
 ## Install Tools
