@@ -27,6 +27,11 @@ Port Forward the Ollama service to interact with it via CURL:
 kubectl port-forward svc/llm-ollama-service -n llm 8080:8080
 ```
 
+You can look at the Manifests folder inside the pod to see how Ollama is mapping ```hal9000``` - ideal if looking for licensing info about the original model.
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- cat /root/.ollama/models/manifests/registry.ollama.ai/library/hal9000/latest
+```
+
 ## Install Tools
 
 Install **[Ollama](https://ollama.com/)** to run your open-source LLM models:
@@ -73,6 +78,15 @@ To view the Modelfile of a given model, use the ```ollama show --modelfile``` co
 ollama show --modelfile llama3.2
 ```
 
+If you want to see the "DNA" of your custom model, such as the architecture, the context length, or the quantisation family —use the ```--parameters``` or the general show command.
+```
+ollama show hal9000
+```
+
+In some cases, you can just use the ```--license``` flag to find this information:
+```
+ollama show hal9000 --license
+```
 
 ## Hugging Face CLI commands
 The best way to get familiar with the Hugging Face CLI to check the official docs: <br/>
