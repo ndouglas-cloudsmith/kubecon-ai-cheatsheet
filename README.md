@@ -1,7 +1,11 @@
 # Kubecon EU 2026 - AI CTF Cheatsheet
 This is a cheatsheet for the AI CTF event at Kubecon EU in 2026
 
-
+## Interacting with Ollama as a Kubernetes workload
+Terminal Shell into the container:
+```
+kubectl exec -it -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- /bin/bash
+```
 
 ## Install Tools
 
@@ -22,8 +26,34 @@ Install **[Trufflehog](https://github.com/trufflesecurity/trufflehog)** to find 
 curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | sh -s -- -b /usr/local/bin
 ```
 
-## Hugging Face commands
+## Ollama CLI commands
+We will use Ollama as the runtime for our LLM models in this CTF, so its good to familiarise ourselves with the CLI commands: <br/>
+https://docs.ollama.com/cli
+<br/><br/>
+```
+ollama run embeddinggemma "Hello world"
+```
+Output is a JSON array:
+```
+echo "Hello world" | ollama run nomic-embed-text
+```
+​Download a model
+```
+ollama pull gemma3
+```​
+Remove a model
+```
+ollama rm gemma3
+```
+To view the Modelfile of a given model, use the ```ollama show --modelfile``` command.
+```
+ollama show --modelfile llama3.2
+```
 
+## Hugging Face CLI commands
+The best way to get familiar with the Hugging Face CLI to check the official docs: <br/>
+https://huggingface.co/docs/huggingface_hub/guides/search#using-the-cli
+<br/><br/>
 List ```models```:
 ```
 hf models ls --author=HuggingFaceTB --limit=10
