@@ -37,18 +37,22 @@ Output is a JSON array:
 ```
 echo "Hello world" | ollama run nomic-embed-text
 ```
+
 ​Download a model
 ```
 ollama pull gemma3
-```​
+```
+​
 Remove a model
 ```
 ollama rm gemma3
 ```
+
 To view the Modelfile of a given model, use the ```ollama show --modelfile``` command.
 ```
 ollama show --modelfile llama3.2
 ```
+
 
 ## Hugging Face CLI commands
 The best way to get familiar with the Hugging Face CLI to check the official docs: <br/>
