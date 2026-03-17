@@ -77,6 +77,18 @@ hf download openai-community/gpt2 --dry-run
 
 
 ## Sensitive credential exposure with Trufflehog
+The Truffle Security team have a good blog post on how to use the tool once installed: <br/>
+https://trufflesecurity.com/blog/trufflehog-partners-with-hugging-face-to-scan-for-secrets
+
+Scan a Hugging Face Model
 ```
-trufflehog huggingface --model <user>/<model>
+trufflehog huggingface --model <model_id>
+```
+Scan a Hugging Face Dataset
+```
+trufflehog huggingface --dataset <dataset_id>
+```
+Scan a Hugging Face Space
+```
+trufflehog huggingface --space <space_id>
 ```
