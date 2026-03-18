@@ -187,6 +187,9 @@ trufflehog huggingface --dataset <dataset_id>
 
 
 ## Scan for malware with modelscan
+The modelscan project has plenty of documented commands in the official Github project or on PyPI: <br/>
+https://pypi.org/project/modelscan/0.1.1/
+
 With it installed, scan a model in a local path:
 ```
 modelscan -p /path/to/model_file.pkl
