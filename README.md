@@ -88,6 +88,11 @@ In some cases, you can just use the ```--license``` flag to find this informatio
 ollama show hal9000 --license
 ```
 
+If you cannot see any license info on the custom model, you can ```curl``` the upstream Hugging Face modelcard (```README.md```) to find the license.
+```
+curl -L https://huggingface.co/nvidia/Kimodo-SOMA-RP-v1/raw/main/README.md
+```
+
 ## Hugging Face CLI commands
 The best way to get familiar with the Hugging Face CLI to check the official docs: <br/>
 https://huggingface.co/docs/huggingface_hub/guides/search#using-the-cli
