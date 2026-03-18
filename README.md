@@ -51,6 +51,11 @@ Install **[Trufflehog](https://github.com/trufflesecurity/trufflehog)** to find 
 curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | sh -s -- -b /usr/local/bin
 ```
 
+If you are ready to get started scanning your models, it is simple:
+```
+pip install modelscan
+```
+
 ## Ollama CLI commands
 We will use Ollama as the runtime for our LLM models in this CTF, so its good to familiarise ourselves with the CLI commands: <br/>
 https://docs.ollama.com/cli
@@ -181,6 +186,16 @@ trufflehog huggingface --dataset <dataset_id>
 ```
 
 Scan a Hugging Face Space
+```
+
+## Scan for malware with modelscan
+With it installed, scan a model:
+```
+modelscan -p /path/to/model_file.pkl
+```
+
+```
+modelscan -hf <repo_id>/<model_file>
 ```
 trufflehog huggingface --space <space_id>
 ```
