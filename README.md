@@ -103,6 +103,12 @@ Grep (filter) specifically for the license information:
 curl -L https://huggingface.co/bartowski/Qwen2.5-0.5B-Instruct-GGUF/raw/main/README.md | grep license
 ```
 
+The most official way to see what Ollama is currently doing is the ```ps``` command. <br/>
+This shows you which models are currently loaded into memory or are being processed.
+```
+ollama ps
+```
+
 ## Hugging Face CLI commands
 The best way to get familiar with the Hugging Face CLI to check the official docs: <br/>
 https://huggingface.co/docs/huggingface_hub/guides/search#using-the-cli
