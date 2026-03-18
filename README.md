@@ -93,6 +93,11 @@ If you cannot see any license info on the custom model, you can ```curl``` the u
 curl -L https://huggingface.co/nvidia/Kimodo-SOMA-RP-v1/raw/main/README.md
 ```
 
+Grep (filter) specifically for the license information:
+```
+curl -L https://huggingface.co/bartowski/Qwen2.5-0.5B-Instruct-GGUF/raw/main/README.md | grep license
+```
+
 ## Hugging Face CLI commands
 The best way to get familiar with the Hugging Face CLI to check the official docs: <br/>
 https://huggingface.co/docs/huggingface_hub/guides/search#using-the-cli
