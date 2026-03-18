@@ -196,5 +196,3 @@ Or through the Hugging Face integration, scan the upstream source:
 ```
 modelscan -hf <repo_id>/<model_file>
 ```
-trufflehog huggingface --space <space_id>
-```
