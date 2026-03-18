@@ -185,15 +185,14 @@ Scan a Hugging Face Dataset
 trufflehog huggingface --dataset <dataset_id>
 ```
 
-Scan a Hugging Face Space
-```
 
 ## Scan for malware with modelscan
-With it installed, scan a model:
+With it installed, scan a model in a local path:
 ```
 modelscan -p /path/to/model_file.pkl
 ```
 
+Or through the Hugging Face integration, scan the upstream source:
 ```
 modelscan -hf <repo_id>/<model_file>
 ```
