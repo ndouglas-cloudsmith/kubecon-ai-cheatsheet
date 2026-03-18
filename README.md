@@ -199,3 +199,21 @@ Or through the Hugging Face integration, scan the upstream source:
 ```
 modelscan -hf <repo_id>/<model_file>
 ```
+
+## Interacting with HAL9000
+As always, if a port-forward session is opened in a separate tab, you can start chatting with HAL9000 directly:
+```
+kubectl port-forward svc/llm-ollama-service -n llm 8080:8080
+```
+
+Ask a simple question to model running in Ollama:
+```
+curl -s http://localhost:8080/api/generate -d '{"model": "hal9000:latest", "prompt": "Why are you downloading malware?", "stream": false}' | jq 'del(.context)'
+```
+
+Or pipe the request into cowsay?
+```
+curl -s http://localhost:8080/api/generate \
+-d '{"model": "hal9000:latest", "prompt": "Why are you downloading malware?", "stream": false}' \
+| jq -r '.response' | cowsay -W 85 -e @@
+```
