@@ -63,6 +63,13 @@ chmod +x exploit-check.sh
 ./exploit-check.sh update
 ```
 
+Install **[ExploitPwned](https://github.com/ndouglas-cloudsmith/ExploitPwned)** to understand if this CVE is being exploited in the wild:
+```
+wget https://raw.githubusercontent.com/ndouglas-cloudsmith/ExploitPwned/refs/heads/main/exploitPwned.sh
+chmod +x exploitPwned.sh
+./exploitPwned.sh update
+```
+
 Installing **[ModelScan](https://pypi.org/project/modelscan/0.1.1/)** from ```pip``` is rather simple:
 ```
 pip install modelscan==0.1.1
