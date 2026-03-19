@@ -226,6 +226,13 @@ The below command scans the public, open-source, **[ollama/ollama](https://hub.d
 grype ollama/ollama:latest
 ```
 
+Make a local directory (```mkdir```), copy from llm namespace (```kubectl cp -n```)the newly-introduced transformers library from the pod into the local ```/tmp``` directory for scanning using the ```grype``` security scanner:
+```
+mkdir -p /tmp/transformers-4.47.0.dist-info
+kubectl cp -n llm $POD_NAME:/usr/share/transformers-4.47.0.dist-info /tmp/transformers-4.47.0.dist-info
+grype dir:/tmp/transformers-4.47.0.dist-info
+```
+
 ## Scan for malware with modelscan
 The modelscan project has plenty of documented commands in the official Github project or on PyPI: <br/>
 https://pypi.org/project/modelscan/0.1.1/
