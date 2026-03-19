@@ -37,6 +37,11 @@ You can look at the Manifests folder inside the pod to see how Ollama is mapping
 kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- cat /root/.ollama/models/manifests/registry.ollama.ai/library/hal9000/latest
 ```
 
+Verify the ```transformers``` library exists in your Kubernetes pod:
+```
+kubectl exec -it -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ls -l /usr/local/lib/python3.11/dist-packages/transformers-4.47.0.dist-info/METADATA
+```
+
 ## Install Tools
 
 Install **[Ollama](https://ollama.com/)** to run your open-source LLM models:
