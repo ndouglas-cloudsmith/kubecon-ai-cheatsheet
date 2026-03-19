@@ -17,6 +17,11 @@ Remotely running commands against the Ollama workload - such as ```ollama list``
 kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ollama list
 ```
 
+You can find any model in the local ollama cache with the below command:
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- grep -rPho "hf\.co/(.*?)(?=:|\")" /root/.ollama
+```
+
 Get the image for the Ollama pod:
 ```
 kubectl get pods -n llm -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name,IMAGES:.spec.containers[*].image'
