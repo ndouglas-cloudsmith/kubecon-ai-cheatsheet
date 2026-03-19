@@ -80,6 +80,11 @@ Installing **[ModelScan](https://pypi.org/project/modelscan/0.1.1/)** from ```pi
 pip install modelscan==0.1.1
 ```
 
+Installing **[Grype](https://oss.anchore.com/docs/installation/grype/)** binaries are provided for Linux, macOS and Windows.
+```
+curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b /usr/local/bin
+```
+
 ## Ollama CLI commands
 We will use Ollama as the runtime for our LLM models in this CTF, so its good to familiarise ourselves with the CLI commands: <br/>
 https://docs.ollama.com/cli
