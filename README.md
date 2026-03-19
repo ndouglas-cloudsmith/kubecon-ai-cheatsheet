@@ -198,6 +198,11 @@ Scan a Hugging Face Dataset
 trufflehog huggingface --dataset <dataset_id>
 ```
 
+## Vulnerability scanning with Grype
+The below command scans the public, open-source, **[ollama/ollama](https://hub.docker.com/r/ollama/ollama)** container image on Docker Hub that uses a ```latest``` tag:
+```
+grype ollama/ollama:latest
+```
 
 ## Scan for malware with modelscan
 The modelscan project has plenty of documented commands in the official Github project or on PyPI: <br/>
