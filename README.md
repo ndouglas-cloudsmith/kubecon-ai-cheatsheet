@@ -58,9 +58,9 @@ chmod +x exploit-check.sh
 ./exploit-check.sh update
 ```
 
-If you are ready to get started scanning your models, it is simple:
+Installing **[ModelScan](https://pypi.org/project/modelscan/0.1.1/)** from ```pip``` is rather simple:
 ```
-pip install modelscan
+[pip install modelscan](https://pypi.org/project/modelscan/0.1.1/)
 ```
 
 ## Ollama CLI commands
