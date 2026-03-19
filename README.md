@@ -60,7 +60,7 @@ chmod +x exploit-check.sh
 
 Installing **[ModelScan](https://pypi.org/project/modelscan/0.1.1/)** from ```pip``` is rather simple:
 ```
-[pip install modelscan](https://pypi.org/project/modelscan/0.1.1/)
+pip install modelscan==0.1.1
 ```
 
 ## Ollama CLI commands
@@ -210,7 +210,7 @@ modelscan -p /path/to/model_file.pkl
 
 Or through the Hugging Face integration, scan the upstream source:
 ```
-modelscan -hf <repo_id>/<model_file>
+modelscan -hf ykilcher/totally-harmless-model
 ```
 
 ## Interacting with HAL9000
