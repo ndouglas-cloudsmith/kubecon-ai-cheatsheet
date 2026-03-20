@@ -291,6 +291,13 @@ GRYPE_DB_AUTO_UPDATE=false grype dir:/tmp/transformers-4.47.0.dist-info
 ```
 
 ## Task 4 - Find the downloaded AI Skills
+List the content of the newly-created ```SKILLS``` directory in the pod
 ```
 kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ls -1 /tmp/SKILLS
+```
+
+Find the source URL of the Skills that were downloaded from ```clawhub.ai```
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- \
+sh -c "grep '^url:' /tmp/SKILLS/*.md | awk '{print \$2}'"
 ```
