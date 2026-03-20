@@ -22,6 +22,11 @@ You can find any model in the local ollama cache with the below command:
 kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- grep -rPho "hf\.co/(.*?)(?=:|\")" /root/.ollama
 ```
 
+To find the models by looking at both the contents (for Modelfile-based ones) and the folder names (for pulled ones), try this:
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- find /root/.ollama -name "*hf.co*"
+```
+
 Get the image for the Ollama pod:
 ```
 kubectl get pods -n llm -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name,IMAGES:.spec.containers[*].image'
