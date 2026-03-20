@@ -278,3 +278,14 @@ Confirm the pull was successful:
 ```
 kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ollama list
 ```
+
+## Task 3 - Use Grype to scan for CVEs
+
+Grype database update:
+```
+grype db update
+```
+Scan file without updating the database:
+```
+GRYPE_DB_AUTO_UPDATE=false grype dir:/tmp/transformers-4.47.0.dist-info
+```
