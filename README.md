@@ -269,3 +269,12 @@ curl -s http://localhost:8080/api/generate \
 -d '{"model": "hal9000:latest", "prompt": "Why are you downloading malware?", "stream": false}' \
 | jq -r '.response' | cowsay -W 85 -e @@
 ```
+
+## Task 2 - if model is not pulled
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ollama pull hf.co/Retr0REG/gguf-ssti
+```
+Confirm the pull was successful:
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ollama list
+```
