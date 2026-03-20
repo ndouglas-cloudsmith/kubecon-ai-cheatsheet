@@ -289,3 +289,8 @@ Scan file without updating the database:
 ```
 GRYPE_DB_AUTO_UPDATE=false grype dir:/tmp/transformers-4.47.0.dist-info
 ```
+
+## Task 4 - Find the downloaded AI Skills
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ls -1 /tmp/SKILLS
+```
