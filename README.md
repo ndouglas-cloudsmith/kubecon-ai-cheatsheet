@@ -301,3 +301,9 @@ Find the source URL of the Skills that were downloaded from ```clawhub.ai```
 kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- \
 sh -c "grep '^url:' /tmp/SKILLS/*.md | awk '{print \$2}'"
 ```
+
+You can also report on all file extensions that end in .md (markdown) - should only be the AI Skills in this case:
+```
+kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- \
+sh -c "grep '^url:' /tmp/SKILLS/*.md"
+```
