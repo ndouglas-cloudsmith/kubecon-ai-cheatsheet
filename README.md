@@ -342,3 +342,16 @@ You can also report on all file extensions that end in .md (markdown) - should o
 kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- \
 sh -c "grep '^url:' /tmp/SKILLS/*.md"
 ```
+
+## Github Search
+Github Search (**https://github.com/search**) is one of the most useful tools for manually discovering malware in AI Skills:
+
+```
+/xmrig/ repo:openclaw/skills path:skills/
+```
+
+This should point you to a URL like: <br/>
+https://github.com/search?q=xmrig+repo%3Aopenclaw%2Fskills+path%3Askills%2F&type=code
+<br/><br/>
+Removing the ```openclaw``` scope of our Github search, you start to see lots of other users creating skills with cryptominers like **[xmrig](https://github.com/xmrig/xmrig)**: <br/>
+https://github.com/search?q=xmrig+path%3Askills%2F&type=code
