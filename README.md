@@ -350,13 +350,11 @@ Github Search (**https://github.com/search**) is one of the most useful tools fo
 /xmrig/ repo:openclaw/skills path:skills/
 ```
 
-This should point you to a URL like: <br/>
+- This should point you to a URL like: <br/>
 https://github.com/search?q=xmrig+repo%3Aopenclaw%2Fskills+path%3Askills%2F&type=code
-<br/><br/>
-Removing the ```openclaw``` scope of our Github search, you start to see lots of other users creating skills with cryptominers like **[xmrig](https://github.com/xmrig/xmrig)**: <br/>
+- Removing the ```openclaw``` scope of our Github search, you start to see lots of other users creating skills with cryptominers like **[xmrig](https://github.com/xmrig/xmrig)**: <br/>
 https://github.com/search?q=xmrig+path%3Askills%2F&type=code
-<br/><br/>
-Watching for ```base64``` encoded strings in Skills: <br/>
+- Watching for ```base64``` encoded strings in Skills: <br/>
 https://github.com/search?q=xmrig+base64+repo%3Aopenclaw%2Fskills+path%3Askills%2F&type=code
-Base64 decode actions without the xmrig filter (much broader scope of malware): <br/>
+- Base64 decode actions without the xmrig filter (much broader scope of malware): <br/>
 https://github.com/search?q=base64+repo%3Aopenclaw%2Fskills+path%3A**%2FSKILL.md&type=code
