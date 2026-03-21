@@ -71,6 +71,11 @@ Install **[Trufflehog](https://github.com/trufflesecurity/trufflehog)** to find 
 curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh | sh -s -- -b /usr/local/bin
 ```
 
+Scan a user account on Hugging Face
+```
+trufflehog huggingface --user mcpotato
+```
+
 Install **[ExploitCheck](https://github.com/ndouglas-cloudsmith/exploit-check)** to understand the likelihood of a software package being exploited:
 ```
 wget https://raw.githubusercontent.com/ndouglas-cloudsmith/exploit-check/refs/heads/main/exploit-check.sh
