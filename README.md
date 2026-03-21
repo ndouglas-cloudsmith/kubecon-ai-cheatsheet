@@ -262,6 +262,21 @@ Or through the Hugging Face integration, scan the upstream source:
 modelscan -hf ykilcher/totally-harmless-model
 ```
 
+To download a **single file** from a repo, simply provide the ```repo_id``` and ```filename``` as follows:
+```
+hf download gpt2 config.json
+```
+
+To download a file located in a subdirectory of the repo, you should provide the path of the file in the repo in posix format like this:
+```
+hf download HiDream-ai/HiDream-I1-Full text_encoder/model.safetensors
+```
+
+You can read the entire contents of the local cache with the below command:
+```
+ls -R /root/.cache/huggingface/hub/
+```
+
 ## Interacting with HAL9000
 As always, if a port-forward session is opened in a separate tab, you can start chatting with HAL9000 directly:
 ```
