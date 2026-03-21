@@ -275,6 +275,16 @@ curl -s http://localhost:8080/api/generate \
 | jq -r '.response' | cowsay -W 85 -e @@
 ```
 
+
+## Malware in open-source malware
+Examples of unsafe GGUF-formatted models that you can download and run in Ollama: <br/>
+https://protectai.com/insights/models?status=UNSAFE&query=gguf <br/>
+https://huggingface.co/Retr0REG/gguf-ssti <br/>
+```
+ollama run huggingface.co/Retr0REG/gguf-ssti:latest --verbose
+```
+
+
 ## Task 2 - if model is not pulled
 ```
 kubectl exec -n llm $(kubectl get pods -n llm -l app=llm-ollama -o jsonpath='{.items[0].metadata.name}') -- ollama pull hf.co/Retr0REG/gguf-ssti
